@@ -1,6 +1,6 @@
 # React 1-2 状态与事件
 
-代码链接：[section1-2](https://github.com/liuyueyi/ReactLearnSession/tree/main/section/section1-2)
+代码链接：[section1-2](https://github.com/wwweirui/ReactLearnSession/tree/main/section/section1-2)
 
 ## Responding to events 事件处理
 
