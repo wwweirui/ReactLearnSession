@@ -1,5 +1,7 @@
 # React 1.4 动态校验
 
+代码链接：[section1-4](https://github.com/wwweirui/ReactLearnSession/tree/main/section/section1-4)
+
 ## 概念
 
 ### Adding styles   添加样式
