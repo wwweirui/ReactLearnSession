@@ -52,6 +52,9 @@ const cities = [
 ];
 
 function MyApp() {
+    function isForecastAvailable(list) {
+        return list && list.length > 0;
+    }
 
     function forecastList(list) {
         return (
@@ -80,10 +83,10 @@ function MyApp() {
                         <section className="city">
                             <h2>{city.country}</h2>
                             <h3>{city.name}</h3>
-                            {
-                                // 存在且长度大于0
-                                (city.forecast && city.forecast.length) ? forecastList(city.forecast) : <p>No forecast available</p>
-                            }
+                            
+                            {isForecastAvailable && isForecastAvailable(city.forecast)}
+                            {!isForecastAvailable && <span>No forecast available</span>}
+
                         </section>
                     )
                 })
