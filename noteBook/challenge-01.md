@@ -1,6 +1,6 @@
 # React 挑战 - 01
 
-代码链接：[chanllenge-01](https://github.com/wwweirui/ReactLearnSession/tree/main/section/chanllenge-01)
+代码链接：[chanllenge-01](https://github.com/wwweirui/ReactLearnSession/tree/main/section/challenge-01)
 
 ## 挑战需求
 

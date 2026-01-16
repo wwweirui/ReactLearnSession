@@ -1,6 +1,6 @@
 # 挑战二 todoList 完成
 
-代码链接：[chanllenge-02](https://github.com/wwweirui/ReactLearnSession/tree/main/section/chanllenge-02)
+代码链接：[chanllenge-02](https://github.com/wwweirui/ReactLearnSession/tree/main/section/challenge-02)
 
 ## 需求
 
