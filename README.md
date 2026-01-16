@@ -1,6 +1,23 @@
-# ReactLearnSession
-react学习笔记记录
+# react航海日志
 
-# 学习记录
-【React简明教程】VS Code中的React 1-1
-https://www.bilibili.com/video/BV1j1ieB7EVj?spm_id_from=333.788.videopod.sections&vd_source=2054a4cc78f3cd292530819d27d87edc
+通过解决问题，学习react，记录学习过程。
+
+## 学习资源
+React 官方文档
+Bilibili 视频教程（感谢布道开源精神）：
+- React 简明教程
+- React 进阶教程
+- React 高级教程
+
+## 学习方法
+- 边看视频边敲代码
+- 实践是检验真理的唯一标准
+
+## 计划
+- 每天跟敲，每天记录吗，最后总结反思
+- 每周末对学习内容进行总结和反思
+
+## 学习目标
+- 掌握 React 的基本概念和使用方法
+- 能够使用 React 开发简单的应用程序
+
