@@ -1,6 +1,7 @@
 import { useState } from "react";
-import TextInput from './TextInput';
-import PassInput from "./PassInput";
+import AppInput from "./AppInput";
+// import TextInput from './TextInput';
+// import PassInput from "./PassInput";
 import './App.css'
 
 function App() {
@@ -28,9 +29,11 @@ function App() {
     <main className="login-form-container">
       <h2>login form</h2>
       <form onSubmit={handleSubmit}>
-        <TextInput inputText={inputText} inputClass={inputClass} setInputText={setInputText} />
+        <AppInput type='text' className={inputClass} value={inputText} setValue={setInputText} />
+        {/* <TextInput inputText={inputText} inputClass={inputClass} setInputText={setInputText} /> */}
         <br />
-        <PassInput password={password} passwordClass={passwordClass} setPassword={setPassword} />
+        {/* <PassInput password={password} passwordClass={passwordClass} setPassword={setPassword} /> */}
+        <AppInput type='password' className={passwordClass} value={password} setValue={setPassword} />
         <br />
         <button type="submit" >提交</button>
       </form>
