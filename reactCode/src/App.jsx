@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AppInput from "./AppInput";
+import AppButton from "./AppButton";
 // import TextInput from './TextInput';
 // import PassInput from "./PassInput";
 import './App.css'
@@ -25,6 +26,7 @@ function App() {
   const inputClass = inputText.length <= 2 && inputText.length > 0 ? 'input-error' : '';
   const passwordClass = password.length <= 2 && password.length > 0 ? 'input-error' : '';
 
+
   return (
     <main className="login-form-container">
       <h2>login form</h2>
@@ -35,7 +37,9 @@ function App() {
         {/* <PassInput password={password} passwordClass={passwordClass} setPassword={setPassword} /> */}
         <AppInput type='password' className={passwordClass} value={password} setValue={setPassword} />
         <br />
-        <button type="submit" >提交</button>
+        <AppButton> 登录 </AppButton>
+        <AppButton> 注册 </AppButton>
+
       </form>
     </main>
   )
