@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from "react";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [inputText, setInputText] = useState('');
+  const [password, setPassword] = useState('');
+
+  function handleSubmit(event) {
+    // 阻止表单默认提交行为
+    event.preventDefault();
+    if (inputText.length <= 2 || password.length <= 2) {
+      alert('用户名或密码长度不能小于3');
+      return;
+    }
+
+    alert(`用户名：${inputText}，密码：${password}`);
+    // 清空输入框
+    setInputText('');
+    setPassword('');
+  }
+
+  const inputClass = inputText.length <= 2 && inputText.length > 0 ? 'input-error' : '';
+  const passwordClass = password.length <= 2 && password.length > 0 ? 'input-error' : '';
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <main className="login-form-container">
+      <h2>login form</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" className={inputClass} value={inputText} onChange={(e) => setInputText(e.target.value)} />
+        <br />
+        <input type="password" className={passwordClass} value={password} onChange={(e) => setPassword(e.target.value)} />
+        <br />
+        <button type="submit" >提交</button>
+      </form>
+    </main>
   )
 }
 
-export default App
+
+
+export default App;
