@@ -1,50 +1,65 @@
+/*
+  1. Migrate all the project to vite scaffold
+  将项目迁移到vite
+  2. Abstract CircleProperty component from circle size and circle rotate
+  将圆形大小和旋转抽象为CircleProperty组件
+
+  More: Create TogglePurple and TextColor components
+  更多：创建TogglePurple和TextColor组件
+ 
+  tips: circle size and rotate style:
+  height: 0px,
+  width: 0px,
+  lineHeight: 0px,
+  transform: `rotate(0deg)`,
+*/
 import { useState } from "react";
-import AppInput from "./AppInput";
-import AppButton from "./AppButton";
-// import TextInput from './TextInput';
-// import PassInput from "./PassInput";
-import './App.css'
+import "./App.css";
+
+import CircleProperty from "./CircleProperty";
+import TogglePurple from "./TogglePurple";
+import TextColor from "./TextColor";
 
 function App() {
-  const [inputText, setInputText] = useState('');
-  const [password, setPassword] = useState('');
+  const [isPurple, setIsPurple] = useState(false);
+  const [textColor, setTextColor] = useState("");
 
-  function handleSubmit(event) {
-    // 阻止表单默认提交行为
-    event.preventDefault();
-    if (inputText.length <= 2 || password.length <= 2) {
-      alert('用户名或密码长度不能小于3');
-      return;
-    }
+  const circleClasses = `${isPurple ? "purple" : ""} ${textColor}`;
 
-    alert(`用户名：${inputText}，密码：${password}`);
-    // 清空输入框
-    setInputText('');
-    setPassword('');
-  }
+  const [size, setSize] = useState(150);
+  const [rotate, setRotate] = useState(0);
 
-  const inputClass = inputText.length <= 2 && inputText.length > 0 ? 'input-error' : '';
-  const passwordClass = password.length <= 2 && password.length > 0 ? 'input-error' : '';
-
+  const circleStyles = {
+    height: `${size}px`,
+    width: `${size}px`,
+    lineHeight: `${size}px`,
+    transform: `rotate(${rotate}deg)`,
+  };
 
   return (
-    <main className="login-form-container">
-      <h2>login form</h2>
-      <form onSubmit={handleSubmit}>
-        <AppInput type='text' className={inputClass} value={inputText} setValue={setInputText} />
-        {/* <TextInput inputText={inputText} inputClass={inputClass} setInputText={setInputText} /> */}
-        <br />
-        {/* <PassInput password={password} passwordClass={passwordClass} setPassword={setPassword} /> */}
-        <AppInput type='password' className={passwordClass} value={password} setValue={setPassword} />
-        <br />
-        <AppButton> 登录 </AppButton>
-        <AppButton> 注册 </AppButton>
+    <main>
+      <TogglePurple value={isPurple} setValue={setIsPurple} >
+        Purple
+      </TogglePurple>
 
-      </form>
+      <TextColor value={textColor} setValue={setTextColor} >
+        Text Color
+      </TextColor>
+
+      <CircleProperty value={size} setValue={setSize}>
+        Circle Size
+      </CircleProperty>
+
+
+      <CircleProperty value={rotate} setValue={setRotate}>
+        Circle Rotate
+      </CircleProperty>
+
+      <div className={`circle ${circleClasses}`} style={circleStyles}>
+        Hi!
+      </div>
     </main>
-  )
+  );
 }
-
-
 
 export default App;
