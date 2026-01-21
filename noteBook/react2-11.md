@@ -4,6 +4,8 @@ hook 意义：将逻辑和view分离，复用重复逻辑
 
 将逻辑处理完全抽离出，并可支持反复使用
 
+[代码链接](https://github.com/wwweirui/ReactLearnSession/blob/main/reactCode/src2.11/useTime.js)
+
 ## 官网概念：
 React 自带了多个内置的 Hook，如 useState 、 useContext 和 useEffect 。有时，你可能会希望有一个用于特定目的的 Hook：例如，用于获取数据、跟踪用户是否在线或连接到聊天室。你或许在 React 中找不到这些 Hook，但你可以为应用程序的需求创建自己的 Hook。
 
